@@ -1,13 +1,24 @@
-function addgrid(){
+function addgrid(height,width){
     const container = document.querySelector("#container");
     const containerInfo= container.getBoundingClientRect();
-    const width = containerInfo.width;
-    container.style.cssText=`grid-template-columns: repeat(16,auto); grid-template-rows: repeat(16,${width/16.0}px);`;
-    for (let i = 0; i<16**2;i++){
+    const containerWidth = containerInfo.width;
+    container.style.cssText=`grid-template-columns: repeat(16,auto); grid-template-rows: repeat(16,${containerWidth/width}px);`;
+    for (let i = 0; i<height**2;i++){
         const gridItem=document.createElement('div');
         gridItem.classList.add('gridItem');
         container.appendChild(gridItem);
     }
 }
 
-addgrid()
+function changeColor(){
+    const gridItems = document.querySelectorAll(".gridItem");
+    gridItems.forEach((gridItem)=>{
+        gridItem.addEventListener('mousedown',()=>{
+            gridItem.style.backgroundColor = "black";
+        })
+    })
+}
+
+addgrid();
+changeColor();
+
