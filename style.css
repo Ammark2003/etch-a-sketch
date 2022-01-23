@@ -8,15 +8,26 @@
 }
 
 #container {
-    width: 45%;
+    margin: 20px;
+    padding: 0px;
+    width: 800px;
+    height: 800px;
     display: grid;
     border-style: solid;
     border-width: 2px;
 }
 
 .gridItem {
+    margin: 0px;
     border-width: 1px;
     border-style: solid;
     width: 100%;
     height: 100%;
+}
+
+#newGrid{
+    font-size: large;
+    margin-top : 10px;
+    height: 50px;
+    width: 200px;
 }
