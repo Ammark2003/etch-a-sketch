@@ -15,9 +15,16 @@ function changeColor(){
     const gridItems = document.querySelectorAll(".gridItem");
     gridItems.forEach((gridItem)=>{
         gridItem.addEventListener('mouseover',()=>{
-            gridItem.style.backgroundColor = "black";
+            gridItem.style.backgroundColor = `rgb(${randomrgb()},${randomrgb()},${randomrgb()})`; //adds random color to the div
+            /*const color=window.getComputedStyle(gridItem).backgroundColor;
+            console.log(color, typeof color);*/
         })
     })
+}
+
+function randomrgb(){
+    const value = Math.floor(Math.random()*255);
+    return value;
 }
 
 function changeGrid() {
